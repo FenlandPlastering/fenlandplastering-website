@@ -4,18 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fenland Plastering provides professional plastering services across Peterborough, Cambridgeshire and surrounding areas. Get in touch for a quotation.">
-  <title>Fenland Plastering | Professional Plastering Services</title>
+
+  <meta name="description" content="Fenland Plastering offers professional plastering services across Peterborough, Cambridgeshire and beyond. Contact us for a quotation.">
+
+  <title>Fenland Plastering Services | Peterborough & Cambridgeshire</title>
 
   <style>
     :root {
-      --navy: #263943;
-      --blue: #426b7c;
-      --light: #f3f6f5;
+      --navy: #071e3b;
+      --red: #ed1c2e;
+      --yellow: #f4c542;
       --white: #ffffff;
-      --text: #35434a;
-      --muted: #6d7b80;
-      --accent: #c9a878;
+      --light: #f4f6f8;
+      --text: #35434d;
+      --muted: #687782;
     }
 
     * {
@@ -31,7 +33,7 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a {
@@ -40,58 +42,76 @@
     }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(1120px, 90%);
       margin: auto;
     }
 
+    /* HEADER */
+
     header {
-      background: var(--navy);
-      color: white;
-      padding: 20px 0;
+      background: var(--white);
+      border-bottom: 4px solid var(--yellow);
     }
 
-    .navigation {
+    .header-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 25px;
+      padding: 12px 0;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .logo span {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 5px;
-      color: var(--accent);
+    .header-logo {
+      width: 220px;
+      max-height: 105px;
+      object-fit: contain;
     }
 
     nav {
       display: flex;
+      align-items: center;
       gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--navy);
       font-size: 14px;
+      font-weight: 700;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--red);
     }
 
-    .hero {
-      background: linear-gradient(120deg, #263943 15%, #426b7c 100%);
+    .nav-contact {
+      background: var(--red);
       color: white;
-      padding: 105px 0;
+      padding: 11px 17px;
+      border-radius: 4px;
+    }
+
+    .nav-contact:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: var(--navy);
+      color: white;
+      padding: 95px 0;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-content {
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .eyebrow {
-      color: var(--accent);
+      color: var(--yellow);
       text-transform: uppercase;
       letter-spacing: 3px;
       font-size: 13px;
@@ -100,32 +120,42 @@
     }
 
     h1 {
-      font-size: clamp(38px, 6vw, 62px);
-      line-height: 1.12;
-      margin-bottom: 22px;
+      font-size: clamp(40px, 6vw, 66px);
+      line-height: 1.1;
+      margin-bottom: 23px;
     }
 
     .hero p {
+      color: #e3eaf0;
       font-size: 18px;
-      color: #e1e9eb;
-      max-width: 600px;
+      max-width: 620px;
       margin-bottom: 32px;
     }
 
     .button {
       display: inline-block;
-      padding: 14px 25px;
-      background: var(--accent);
-      color: #263943;
-      font-weight: bold;
+      background: var(--red);
+      color: white;
+      padding: 14px 26px;
       border-radius: 4px;
+      font-weight: bold;
       transition: 0.2s;
     }
 
     .button:hover {
-      background: #dfc49d;
+      background: var(--yellow);
+      color: var(--navy);
       transform: translateY(-2px);
     }
+
+    .hero-line {
+      width: 75px;
+      height: 5px;
+      background: var(--yellow);
+      margin-top: 35px;
+    }
+
+    /* GENERAL SECTIONS */
 
     section {
       padding: 75px 0;
@@ -138,13 +168,19 @@
 
     .section-heading h2 {
       color: var(--navy);
-      font-size: 34px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
     .section-heading p {
       color: var(--muted);
     }
+
+    .section-heading .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    /* SERVICES */
 
     .services {
       background: var(--light);
@@ -160,14 +196,15 @@
       background: white;
       padding: 30px;
       border-radius: 6px;
-      border-bottom: 3px solid var(--accent);
+      border-bottom: 4px solid var(--red);
+      box-shadow: 0 3px 14px rgba(7, 30, 59, 0.05);
     }
 
-    .service-card .number {
-      color: var(--accent);
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 12px;
+    .service-number {
+      color: var(--red);
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
 
     .service-card h3 {
@@ -180,36 +217,43 @@
       font-size: 14px;
     }
 
+    /* ABOUT */
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 55px;
       align-items: center;
+      gap: 55px;
     }
 
-    .photo-placeholder {
-      min-height: 320px;
-      background: linear-gradient(135deg, #dce5e5, #aebfc1);
-      border-radius: 6px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: var(--navy);
+    .about-logo-panel {
+      background: var(--navy);
       padding: 30px;
-      font-weight: bold;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .about-logo-panel img {
+      width: 100%;
+      max-width: 440px;
+      background: white;
+      border-radius: 5px;
+      padding: 12px;
     }
 
     .about-copy h2 {
-      font-size: 34px;
       color: var(--navy);
+      font-size: 35px;
+      line-height: 1.2;
       margin-bottom: 20px;
     }
 
     .about-copy p {
-      margin-bottom: 16px;
       color: var(--muted);
+      margin-bottom: 16px;
     }
+
+    /* GALLERY */
 
     .gallery {
       background: var(--light);
@@ -222,57 +266,81 @@
     }
 
     .gallery-item {
-      min-height: 220px;
-      background: linear-gradient(135deg, #dce5e5, #aebfc1);
-      border-radius: 5px;
+      min-height: 215px;
+      background: #e2e7eb;
+      border-radius: 6px;
+      border: 2px dashed #aebbc5;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 20px;
       color: var(--navy);
       font-weight: bold;
     }
 
+    .gallery-note {
+      text-align: center;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
     .contact {
       background: var(--navy);
       color: white;
       text-align: center;
+      border-top: 6px solid var(--yellow);
     }
 
     .contact h2 {
-      font-size: 36px;
+      font-size: 38px;
       margin-bottom: 15px;
     }
 
-    .contact p {
-      color: #d9e2e5;
-      margin-bottom: 25px;
+    .contact > .container > p {
+      color: #dce5ed;
+      max-width: 620px;
+      margin: 0 auto 28px;
     }
 
     .contact-details {
-      margin-top: 30px;
-      color: #d9e2e5;
+      margin-top: 35px;
+      color: #e1e8ed;
       line-height: 2;
     }
 
+    /* FOOTER */
+
     footer {
-      background: #1c2a32;
-      color: #c5d0d3;
+      background: #041426;
+      color: #d0d9e0;
       text-align: center;
-      padding: 22px;
+      padding: 25px 15px;
       font-size: 13px;
     }
 
-    @media (max-width: 700px) {
-      .navigation {
+    footer .footer-highlight {
+      color: var(--yellow);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+      .header-inner {
         flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .header-logo {
+        width: 190px;
       }
 
       nav {
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 14px;
       }
 
       .hero {
@@ -285,8 +353,18 @@
         grid-template-columns: 1fr;
       }
 
+      .about-grid {
+        gap: 35px;
+      }
+
       section {
         padding: 55px 0;
+      }
+
+      .section-heading h2,
+      .about-copy h2,
+      .contact h2 {
+        font-size: 30px;
       }
     }
   </style>
@@ -295,18 +373,22 @@
 <body>
 
   <header>
-    <div class="container navigation">
-      <a href="#" class="logo">
-        FENLAND
-        <span>PLASTERING</span>
+    <div class="container header-inner">
+
+      <a href="#" aria-label="Fenland Plastering home">
+        <img
+          src="logo.png"
+          alt="Fenland Plastering Services logo"
+          class="header-logo">
       </a>
 
-      <nav>
+      <nav aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#gallery">Our Work</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-contact">Get in Touch</a>
       </nav>
+
     </div>
   </header>
 
@@ -314,27 +396,44 @@
 
     <section class="hero">
       <div class="container hero-content">
-        <div class="eyebrow">Peterborough · Cambridgeshire · Beyond</div>
-        <h1>A flawless finish.<br>Every time.</h1>
+
+        <div class="eyebrow">
+          Peterborough · Cambridgeshire · Beyond
+        </div>
+
+        <h1>
+          A flawless finish.<br>
+          Every time.
+        </h1>
+
         <p>
           Professional plastering services, quality workmanship
-          and attention to detail. Helping transform houses into
-          beautiful homes.
+          and attention to detail. Helping transform houses
+          into beautiful homes.
         </p>
-        <a href="#contact" class="button">Request a quotation</a>
+
+        <a href="#contact" class="button">
+          Request a quotation
+        </a>
+
+        <div class="hero-line"></div>
+
       </div>
     </section>
 
     <section class="services" id="services">
       <div class="container">
+
         <div class="section-heading">
+          <div class="eyebrow">What we do</div>
           <h2>Our Services</h2>
-          <p>Quality plastering services to suit your project.</p>
+          <p>Quality plastering services for your home or project.</p>
         </div>
 
         <div class="service-grid">
+
           <article class="service-card">
-            <div class="number">01</div>
+            <div class="service-number">01</div>
             <h3>Wall Skimming</h3>
             <p>
               Smooth, professional finishes to transform
@@ -343,16 +442,16 @@
           </article>
 
           <article class="service-card">
-            <div class="number">02</div>
+            <div class="service-number">02</div>
             <h3>Rendering</h3>
             <p>
-              Quality rendering solutions to improve and
-              protect external walls.
+              Quality rendering solutions to improve
+              and protect external walls.
             </p>
           </article>
 
           <article class="service-card">
-            <div class="number">03</div>
+            <div class="service-number">03</div>
             <h3>Dry Lining</h3>
             <p>
               Preparing walls and ceilings to create
@@ -361,7 +460,7 @@
           </article>
 
           <article class="service-card">
-            <div class="number">04</div>
+            <div class="service-number">04</div>
             <h3>Ceiling Repairs</h3>
             <p>
               Repairing damaged ceilings and restoring
@@ -370,7 +469,7 @@
           </article>
 
           <article class="service-card">
-            <div class="number">05</div>
+            <div class="service-number">05</div>
             <h3>Plaster Repairs</h3>
             <p>
               Repairing cracks, holes and damaged plaster
@@ -379,87 +478,120 @@
           </article>
 
           <article class="service-card">
-            <div class="number">06</div>
+            <div class="service-number">06</div>
             <h3>New Projects</h3>
             <p>
               Professional plastering for renovation
               and new-build projects.
             </p>
           </article>
+
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="container about-grid">
-        <div class="photo-placeholder">
-          YOUR BUSINESS PHOTOGRAPH<br>
-          Add a photograph of the plasterer or a completed project
+
+        <div class="about-logo-panel">
+          <img src="logo.png" alt="Fenland Plastering Services">
         </div>
 
         <div class="about-copy">
           <div class="eyebrow">About Fenland Plastering</div>
-          <h2>Quality workmanship you can trust.</h2>
+
+          <h2>
+            Quality workmanship you can trust.
+          </h2>
+
           <p>
             Welcome to Fenland Plastering. We provide professional
             plastering services across Peterborough, Cambridgeshire
             and surrounding areas.
           </p>
+
           <p>
             Whether you're renovating a single room or working
             on a larger project, we're committed to delivering
             quality workmanship and a finish you can be proud of.
           </p>
+
           <p>
             Get in touch to discuss your project and request
             a quotation.
           </p>
+
+          <a href="#contact" class="button">
+            Contact us
+          </a>
         </div>
+
       </div>
     </section>
 
     <section class="gallery" id="gallery">
       <div class="container">
+
         <div class="section-heading">
+          <div class="eyebrow">A look at what we do</div>
           <h2>Our Recent Work</h2>
-          <p>A selection of our projects and completed work.</p>
+          <p>
+            A selection of our projects and completed work.
+          </p>
         </div>
 
         <div class="gallery-grid">
+
           <div class="gallery-item">Project photograph 01</div>
           <div class="gallery-item">Project photograph 02</div>
           <div class="gallery-item">Project photograph 03</div>
           <div class="gallery-item">Project photograph 04</div>
           <div class="gallery-item">Project photograph 05</div>
           <div class="gallery-item">Project photograph 06</div>
+
         </div>
+
+        <p class="gallery-note">
+          Photographs of completed projects will be added here.
+        </p>
+
       </div>
     </section>
 
     <section class="contact" id="contact">
       <div class="container">
+
         <div class="eyebrow">Let's talk about your project</div>
+
         <h2>Need a plasterer?</h2>
+
         <p>
           Get in touch with Fenland Plastering to discuss
           your requirements and request a quotation.
         </p>
+
         <a href="mailto:info@fenlandplastering.co.uk"
-           class="button">Email us</a>
+           class="button">
+          Email us
+        </a>
 
         <div class="contact-details">
           <p>Telephone: To be confirmed</p>
           <p>Email: info@fenlandplastering.co.uk</p>
           <p>Peterborough · Cambridgeshire · Beyond</p>
         </div>
+
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Fenland Plastering.
-       All rights reserved.</p>
+    <p>
+      &copy; <span id="year"></span>
+      <span class="footer-highlight">Fenland Plastering</span>.
+      All rights reserved.
+    </p>
     <p>Professional plastering services across Cambridgeshire.</p>
   </footer>
 
