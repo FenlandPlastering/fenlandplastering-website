@@ -188,40 +188,45 @@ h1 {
 
     /* SERVICES */
 
-    .services {
-      background: var(--light);
-    }
+.services {
+  background: #f7f8fa;
+}
 
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 65px;
+  row-gap: 55px;
+}
 
-    .service-card {
-      background: white;
-      padding: 30px;
-      border-radius: 6px;
-      border-bottom: 4px solid var(--red);
-      box-shadow: 0 3px 14px rgba(7, 30, 59, 0.05);
-    }
+.service-card {
+  background: transparent;
+  padding: 25px 0;
+  border-radius: 0;
+  border-bottom: 1px solid #d9e0e6;
+  box-shadow: none;
+}
 
-    .service-number {
-      color: var(--red);
-      font-size: 25px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
+.service-number {
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
 
-    .service-card h3 {
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
+.service-card h3 {
+  color: var(--navy);
+  font-size: 25px;
+  margin-bottom: 12px;
+}
 
-    .service-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+.service-card p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 520px;
+}
 
     /* ABOUT */
 
@@ -438,61 +443,43 @@ h1 {
 
         <div class="service-grid">
 
-          <article class="service-card">
-            <div class="service-number">01</div>
-            <h3>Wall Skimming</h3>
-            <p>
-              Smooth, professional finishes to transform
-              tired or uneven walls.
-            </p>
-          </article>
+<article class="service-card">
+    <div class="service-number">01 / INTERNAL</div>
+    <h3>Plastering & Skimming</h3>
+    <p>
+      Smooth, professional finishes for walls and ceilings,
+      including plaster repairs and restoration work.
+    </p>
+  </article>
 
-          <article class="service-card">
-            <div class="service-number">02</div>
-            <h3>Rendering</h3>
-            <p>
-              Quality rendering solutions to improve
-              and protect external walls.
-            </p>
-          </article>
+  <article class="service-card">
+    <div class="service-number">02 / EXTERNAL</div>
+    <h3>Rendering</h3>
+    <p>
+      External wall rendering to improve the appearance
+      and protection of your property.
+    </p>
+  </article>
 
-          <article class="service-card">
-            <div class="service-number">03</div>
-            <h3>Dry Lining</h3>
-            <p>
-              Preparing walls and ceilings to create
-              clean, ready-to-finish surfaces.
-            </p>
-          </article>
+  <article class="service-card">
+    <div class="service-number">03 / PREPARATION</div>
+    <h3>Dry Lining</h3>
+    <p>
+      Preparing walls and ceilings to create clean,
+      professional surfaces ready for finishing.
+    </p>
+  </article>
 
-          <article class="service-card">
-            <div class="service-number">04</div>
-            <h3>Ceiling Repairs</h3>
-            <p>
-              Repairing damaged ceilings and restoring
-              a smooth, consistent finish.
-            </p>
-          </article>
+  <article class="service-card">
+    <div class="service-number">04 / PROJECTS</div>
+    <h3>Renovations & New Builds</h3>
+    <p>
+      Plastering work for home improvements,
+      refurbishments and new-build projects.
+    </p>
+  </article>
 
-          <article class="service-card">
-            <div class="service-number">05</div>
-            <h3>Plaster Repairs</h3>
-            <p>
-              Repairing cracks, holes and damaged plaster
-              around your home.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number">06</div>
-            <h3>New Projects</h3>
-            <p>
-              Professional plastering for renovation
-              and new-build projects.
-            </p>
-          </article>
-
-        </div>
+</div>
       </div>
     </section>
 
