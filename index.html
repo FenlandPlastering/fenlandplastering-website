@@ -193,39 +193,42 @@ h1 {
 }
 
 .service-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 65px;
-  row-gap: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px;
+    align-items: stretch;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .service-card {
-  background: transparent;
-  padding: 25px 0;
-  border-radius: 0;
-  border-bottom: 1px solid #d9e0e6;
-  box-shadow: none;
+    background: transparent;
+    padding: 25px 20px 25px 0;
+    border-radius: 0;
+    border-bottom: 2px solid #d9e0e6;
+    box-shadow: none;
 }
 
 .service-number {
   color: var(--red);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
 }
 
 .service-card h3 {
   color: var(--navy);
-  font-size: 25px;
-  margin-bottom: 12px;
+  font-size: 22px;
+  line-height: 1.25;
+  margin-bottom: 14px;
 }
 
 .service-card p {
   color: var(--muted);
-  font-size: 16px;
-  line-height: 1.75;
-  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 100%;
 }
 
     /* ABOUT */
@@ -339,7 +342,7 @@ h1 {
 
     /* MOBILE */
 
-    @media (max-width: 750px) {
+    @media (max-width: 900px) {
       .header-inner {
         flex-direction: column;
         padding: 15px 0;
