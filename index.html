@@ -1076,6 +1076,7 @@
       new Date().getFullYear();
   </script>
 
+
 <style>
   #gallery-lightbox {
     border: none;
@@ -1087,30 +1088,47 @@
   }
 
   #gallery-lightbox::backdrop {
-    background: rgba(5, 15, 30, 0.9);
+    background: rgba(5, 15, 30, 0.92);
   }
 
   #gallery-lightbox img {
     display: block;
-    max-width: 90vw;
-    max-height: 82vh;
+    max-width: 85vw;
+    max-height: 78vh;
     width: auto;
     height: auto;
     border-radius: 8px;
   }
 
   #gallery-lightbox button {
-    position: absolute;
-    top: 0;
-    right: 0;
     background: #f4c542;
     color: #10243a;
     border: none;
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     font-size: 24px;
     cursor: pointer;
+  }
+
+  #lightbox-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #lightbox-prev {
+    left: -5px;
+  }
+
+  #lightbox-next {
+    right: -5px;
   }
 
   .gallery-item img {
@@ -1120,20 +1138,47 @@
 
 <dialog id="gallery-lightbox">
   <button type="button" id="lightbox-close" aria-label="Close image">&times;</button>
+
+  <button type="button" id="lightbox-prev" class="lightbox-arrow" aria-label="Previous image">&#8249;</button>
+
   <img id="lightbox-image" src="" alt="">
+
+  <button type="button" id="lightbox-next" class="lightbox-arrow" aria-label="Next image">&#8250;</button>
 </dialog>
 
 <script>
   const lightbox = document.getElementById('gallery-lightbox');
   const lightboxImage = document.getElementById('lightbox-image');
   const closeButton = document.getElementById('lightbox-close');
+  const prevButton = document.getElementById('lightbox-prev');
+  const nextButton = document.getElementById('lightbox-next');
 
-  document.querySelectorAll('.gallery-item img').forEach(photo => {
+  const galleryPhotos = Array.from(
+    document.querySelectorAll('.gallery-item img')
+  );
+
+  let currentPhoto = 0;
+
+  function showPhoto(index) {
+    currentPhoto = (index + galleryPhotos.length) % galleryPhotos.length;
+
+    lightboxImage.src = galleryPhotos[currentPhoto].src;
+    lightboxImage.alt = galleryPhotos[currentPhoto].alt;
+  }
+
+  galleryPhotos.forEach((photo, index) => {
     photo.addEventListener('click', () => {
-      lightboxImage.src = photo.src;
-      lightboxImage.alt = photo.alt;
+      showPhoto(index);
       lightbox.showModal();
     });
+  });
+
+  nextButton.addEventListener('click', () => {
+    showPhoto(currentPhoto + 1);
+  });
+
+  prevButton.addEventListener('click', () => {
+    showPhoto(currentPhoto - 1);
   });
 
   closeButton.addEventListener('click', () => {
@@ -1143,6 +1188,18 @@
   lightbox.addEventListener('click', event => {
     if (event.target === lightbox) {
       lightbox.close();
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (!lightbox.open) return;
+
+    if (event.key === 'ArrowRight') {
+      showPhoto(currentPhoto + 1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+      showPhoto(currentPhoto - 1);
     }
   });
 </script>
