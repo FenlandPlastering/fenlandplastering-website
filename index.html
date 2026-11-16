@@ -1098,6 +1098,13 @@
   align-items: center;
   justify-content: center;
 }
+  #gallery-lightbox:not([open]) {
+  display: none;
+}
+
+#gallery-lightbox[open] {
+  display: flex;
+}
 
   #gallery-lightbox::backdrop {
     background: rgba(5, 15, 30, 0.92);
@@ -1125,10 +1132,11 @@
   }
 
   #lightbox-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 10;
+}
 
   .lightbox-arrow {
     position: absolute;
